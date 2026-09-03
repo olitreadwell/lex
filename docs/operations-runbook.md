@@ -160,7 +160,7 @@ The codebase has inconsistent URI formats across collections (https vs http, mis
 USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py
 
 # Apply fixes to a specific collection
-USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py --apply --collection amendments
+USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py --apply --collection amendment
 
 # Apply all
 USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py --apply
@@ -250,7 +250,7 @@ uv run python scripts/profile_search_endpoints.py
 USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py
 
 # Apply URI fixes to amendments
-USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py --apply --collection amendments
+USE_CLOUD_QDRANT=true uv run python scripts/maintenance/fix_uri_formats.py --apply --collection amendment
 
 # Enable quantisation on all collections (background, 10-30 min)
 USE_CLOUD_QDRANT=true uv run python scripts/maintenance/enable_quantization.py
@@ -271,7 +271,7 @@ USE_CLOUD_QDRANT=true uv run python scripts/maintenance/enable_quantization.py
 uv run python scripts/pdf/discover_pdf_legislation.py
 
 # Process PDFs from CSV
-uv run python scripts/pdf/process_pdfs.py --csv data/pdf_only_legislation.csv --max-concurrent 5
+uv run python scripts/pdf/process_pdfs.py --csv data/pdf_only_legislation_complete.csv --max-concurrent 5
 
 # Check batch progress
 uv run python scripts/pdf/check_pdf_progress.py data/results.jsonl

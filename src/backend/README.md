@@ -262,7 +262,7 @@ Client Request → FastAPI Router → Search Service → Qdrant → Response
 
 ```bash
 # Qdrant
-QDRANT_URL=http://localhost:6333
+QDRANT_HOST=http://localhost:6333
 
 # Azure OpenAI (for embeddings)
 AZURE_OPENAI_API_KEY=your_key

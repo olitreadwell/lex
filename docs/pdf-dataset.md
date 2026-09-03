@@ -46,7 +46,7 @@ PDF URLs (10,267) → Azure Blob Storage → GPT-5-mini Vision → Structured JS
 | PDF Processor | `src/lex/processing/historical_pdf/processor.py` | GPT-5-mini extraction (v1.1 prompt) |
 | Batch Processing | `scripts/pdf/process_pdfs.py` | Parallel processing with resume |
 | Progress Checker | `scripts/pdf/check_pdf_progress.py` | Statistics and cost estimates |
-| Blob Setup | `scripts/setup_azure_storage.py` | Azure Blob Storage upload |
+| Blob Setup | `src/lex/processing/historical_pdf/blob_uploader.py` | Azure Blob Storage upload |
 | Models | `src/lex/processing/historical_pdf/models.py` | Pydantic extraction result models |
 
 ---
@@ -96,10 +96,9 @@ The uploader fetches authoritative XML metadata from legislation.gov.uk and merg
 
 ```bash
 # 1. Discover PDF URLs
-uv run python data/extract_all_pdfs.sh
+uv run python scripts/pdf/discover_pdf_legislation.py
 
-# 2. Upload PDFs to Azure Blob Storage
-uv run python scripts/setup_azure_storage.py
+# 2. PDFs are uploaded to Azure Blob Storage during batch processing
 
 # 3. Batch process with GPT-5-mini
 uv run python scripts/pdf/process_pdfs.py \
