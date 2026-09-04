@@ -25,7 +25,7 @@
 - data pipeline is heavily documented internally
 
 ## Gap ledger (dedupe — READ FIRST, never re-pick)
-- `2026-09-03` self-found docs trivial pass (README stale make targets, `--collection amendments` flag, `QDRANT_URL`→`QDRANT_HOST`, `seperate` typo, stale pdf csv/sh) — outcome: fork PR opened — lesson: doc references to nonexistent Makefile targets/scripts/env vars vs code truth
+- `2026-09-03` self-found docs trivial pass (README stale make targets, `--collection amendments` flag, `QDRANT_URL`→`QDRANT_HOST`, `seperate` typo, stale pdf csv/sh) — outcome: fork PR opened (#1) — lesson: doc references to nonexistent Makefile targets/scripts/env vars vs code truth. Fork CI note for future runs: ruff-lint (11 pre-existing unformatted py), security pip-audit (dep CVEs), pre-commit detect-secrets (infrastructure/azure/main.bicep:440) are RED on base main already, unrelated to any docs change; pytest non-integration is green.
 
 ## Mined gaps (discovered, not yet attempted)
 - n/a this run (single focused trivial pass only)
