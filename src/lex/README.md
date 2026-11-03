@@ -65,15 +65,15 @@ As a reminder, the fastest way to get started is using the provided Makefile com
 make docker-up
 
 # Load individual data types
-make ingest-legislation         # Primary legislation documents
-make ingest-legislation-section # Individual sections of legislation  
-make ingest-caselaw             # Court judgments and decisions
-make ingest-caselaw-section     # Individual sections of caselaw
-make ingest-explanatory-note    # Documents explaining legislation
-make ingest-amendment           # Changes to legislation
+make ingest-legislation-sample         # Primary legislation documents
+make ingest-legislation-section-sample # Individual sections of legislation  
+make ingest-caselaw-sample             # Court judgments and decisions
+make ingest-caselaw-section-sample     # Individual sections of caselaw
+make ingest-explanatory-note-sample    # Documents explaining legislation
+make ingest-amendment-sample           # Changes to legislation
 
 # Load all data types with optimal settings
-make ingest-all
+make ingest-all-sample
 ```
 
 ## Command Reference
@@ -123,7 +123,7 @@ uv run src/lex/main.py -m [model] -y [years] -t [types] [options]
 Ensure the docker services are running:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Then we can use this container to upload legislation
@@ -169,7 +169,7 @@ For faster processing or offline work, you can use pre-downloaded "Statute Book 
 1. **Download Statute Book Data**:
    - Visit [research.legislation.gov.uk](https://research.legislation.gov.uk). You will need to request access unless already provided from The National Archives.
    - Download the Statute Book Data archive and select for the legislation type.
-   - We are hoping to provide a seperate download of this legislation, although it doesn't yet exist.
+   - We are hoping to provide a separate download of this legislation, although it doesn't yet exist.
 
 2. **Extract to Correct Location**:
 
@@ -221,7 +221,7 @@ This project uses Qdrant as the vector database for all document storage and sea
 
 **Local Qdrant (Default)**
 
-- Run `docker-compose up` to start Qdrant locally
+- Run `docker compose up` to start Qdrant locally
 - Access Qdrant dashboard at <http://localhost:6333/dashboard>
 - Qdrant API will be available at <http://localhost:6333>
 
@@ -230,7 +230,7 @@ This project uses Qdrant as the vector database for all document storage and sea
 - Qdrant URL is configured in `.env`:
 
   ```
-  QDRANT_URL=http://localhost:6333
+  QDRANT_HOST=http://localhost:6333
   ```
 
 ### Embeddings
